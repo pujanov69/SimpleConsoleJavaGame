@@ -1,7 +1,7 @@
 public class Enemy extends Character {
     private int experienceReward;
 
-    public Enemy(int experienceReward, String name, int health, int accuracy, Weapon weapon) {
+    public Enemy(String name, int health, int accuracy, int experienceReward, Weapon weapon) {
     	super(name, health, accuracy, weapon);
         this.experienceReward = experienceReward;
     }

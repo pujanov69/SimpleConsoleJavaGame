@@ -6,7 +6,7 @@ public class Player extends Character {
     private int maxHealth;
     private int nextLevelExperience;
 
-    public Player(int experiencePoints, int level, int maxHealth, int nextLevelExperience, String name, int health, int accuracy, Weapon weapon) {
+    public Player(String name, int health, int accuracy, int experiencePoints, Weapon weapon, int level, int maxHealth, int nextLevelExperience) {
     	super(name, health, accuracy, weapon);
         this.experiencePoints = experiencePoints;
         this.level = level;

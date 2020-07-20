@@ -1,10 +1,10 @@
 
 public abstract class Character {
 
-	private String name;
-	private int health;
-	private int accuracy;
-	private Weapon weapon;
+	protected String name;
+	protected int health;
+	protected int accuracy;
+	protected Weapon weapon;
 	
 	
 	public boolean isDead() {
