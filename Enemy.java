@@ -1,9 +1,13 @@
 public class Enemy extends Character {
     private int experienceReward;
+    private Shield shield;
+    private int shieldResistance;
 
-    public Enemy(String name, int health, int accuracy, int experienceReward, Weapon weapon) {
+    public Enemy(String name, int health, int accuracy, int experienceReward, Weapon weapon, Shield shield) {
     	super(name, health, accuracy, weapon);
         this.experienceReward = experienceReward;
+        this.shield = shield;
+        shieldResistance = shield.getResistance();
     }
 
 
@@ -23,5 +27,19 @@ public class Enemy extends Character {
         }
         System.out.println();
     }
+
+
+	@Override
+	public void takeDamage(int damage) {
+	
+		if(shieldResistance > 0) {
+			shieldResistance -= damage;
+			if(shieldResistance <= 0) {
+				System.out.println("The " + shield.getType() + " shield is broken");
+			}
+		} else {
+			health -= damage;
+		}
+	}
 
 }

@@ -43,13 +43,15 @@ public class Map {
 
         if (roll <= 10) {
             Weapon weapon = new Weapon("dagger", 5, 10);
-            enemy = new Enemy("Zombie", 10, 8, 200, weapon);
+            Shield shield = new Shield("Wooden", 10);
+            enemy = new Enemy("Zombie", 10, 8, 200, weapon, shield);
             System.out.println("You encountered a Zombie!");
             System.out.println("Prepare for battle!");
         } else if (roll >= 11 && roll <= 15) {
 
             Weapon weapon = new Weapon("dagger", 5, 10);
-            enemy = new Enemy("Dark soul", 10, 6, 200, weapon);
+            Shield shield = new Shield("Wooden", 10);
+            enemy = new Enemy("Dark soul", 10, 6, 200, weapon, shield);
             System.out.println("You encountered a Dark soul!");
             System.out.println("Prepare for battle!");
         }

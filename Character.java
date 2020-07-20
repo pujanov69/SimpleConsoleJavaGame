@@ -11,9 +11,7 @@ public abstract class Character {
 		return health <= 0;
 	}
 	
-    public void takeDamage(int damage) {
-        health -= damage;
-    }
+    public abstract void takeDamage(int damage);
 
     public void displayHealth() {
         System.out.println(name + "'s health = " + health);

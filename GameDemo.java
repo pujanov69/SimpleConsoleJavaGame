@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class GameDemo {
     public static void main(String[] args) {
         Map gameMap = new Map();
-        Player mainPlayer = new Player("Bob", 20, 10,
+        Player mainPlayer = new Player("Bob", 50, 10,
                 0, new Weapon("Sword", 1, 4), 1, 20, 1000);
 
         Scanner input = new Scanner(System.in);

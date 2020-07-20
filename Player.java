@@ -5,13 +5,15 @@ public class Player extends Character {
     private int level;
     private int maxHealth;
     private int nextLevelExperience;
-
+    private int gold;
+    
     public Player(String name, int health, int accuracy, int experiencePoints, Weapon weapon, int level, int maxHealth, int nextLevelExperience) {
     	super(name, health, accuracy, weapon);
         this.experiencePoints = experiencePoints;
         this.level = level;
         this.maxHealth = maxHealth;
         this.nextLevelExperience = nextLevelExperience;
+        this.gold = 0;
     }
 
 
@@ -49,6 +51,9 @@ public class Player extends Character {
     public void win(int experience) {
         System.out.println("You won the battle!");
         System.out.println("You win " + experience + " experience points!");
+        int goldGained = Utility.random(0, 20);
+        System.out.println("You got " + goldGained + " gold coins!");
+        gold += goldGained;
         experiencePoints += experience;
     }
 
@@ -92,7 +97,15 @@ public class Player extends Character {
         System.out.println("Level                      = " + level);
         System.out.println("Weapon Name                = " + weapon.getName());
         System.out.println("Weapon Damage              = " + weapon.getDamageRange().getLow() + " - " + weapon.getDamageRange().getHigh());
+        System.out.println("GOLD                       = " + gold + " coins");	
+    
     }
+
+
+	@Override
+	public void takeDamage(int damage) {
+		   health -= damage;
+	}
 
 
 }
