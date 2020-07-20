@@ -108,4 +108,36 @@ public class Player extends Character {
 	}
 
 
+	public boolean attack(Character[] enemies) {
+		Scanner scanner = new Scanner(System.in);
+        int selection;
+        System.out.println("1) Attack, 2) Run: ");
+        selection = scanner.nextInt();
+        switch (selection) {
+            case 1:
+                System.out.println("You attack an " + enemies[0].getName() + " with a " + weapon.getName());
+                if (Utility.random(0, 20) < accuracy) {
+                    int damage = Utility.random(weapon.getDamageRange());
+                    System.out.println("You attack for " + damage + " damage!");
+                    enemies[0].takeDamage(damage);
+                } else {
+                    System.out.println("You miss!");
+                }
+                System.out.println();
+                break;
+            case 2:
+                // 25 % chance of being able to run.
+                int roll = Utility.random(1, 4);
+                if (roll == 1) {
+                    System.out.println("You run away!");
+                    return true;
+                } else {
+                    System.out.println("You could not escape!");
+                    break;
+                }
+        }
+        return false;
+	}
+
+
 }

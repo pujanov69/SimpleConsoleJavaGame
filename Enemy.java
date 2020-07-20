@@ -11,7 +11,15 @@ public class Enemy extends Character {
     }
 
 
-    public int getExperienceReward() {
+    public Enemy(Enemy enemy) {
+    	super(enemy.name, enemy.health, enemy.accuracy, enemy.weapon);
+        this.experienceReward = enemy.experienceReward;
+        this.shield = enemy.shield;
+        shieldResistance = enemy.shield.getResistance();
+	}
+
+
+	public int getExperienceReward() {
         return experienceReward;
     }
 

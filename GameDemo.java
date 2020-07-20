@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class GameDemo {
     public static void main(String[] args) {
         Map gameMap = new Map();
-        Player mainPlayer = new Player("Bob", 50, 10,
+        Player mainPlayer = new Player("Bob", 1000, 10,
                 0, new Weapon("Sword", 1, 4), 1, 20, 1000);
 
         Scanner input = new Scanner(System.in);
@@ -13,29 +13,33 @@ public class GameDemo {
             int selection = 1;
             System.out.println("1) Move, 2) Rest, 3) View Stats, 4) Quit: ");
             selection = input.nextInt();
-            Enemy enemy = null;
+            Enemy[] enemy = null;
             switch (selection) {
                 case 1:
                     gameMap.move();
 
-                    enemy = gameMap.checkForEnemies();
+                    enemy = (Enemy[]) gameMap.checkForEnemies();
 
                     if (enemy != null) {
 
                         while (true) {
 
                             mainPlayer.displayHealth();
-                            enemy.displayHealth();
-                            enemy.displayShield();
+                            int count = enemy.length;
+                            System.out.println("enemy number" + count);
+                            for(int i = 0; i < count; i++) {
+                            	enemy[i].displayHealth();
+                            	((Enemy) enemy[i]).displayShield();
+                            }
                             boolean runAway = mainPlayer.attack(enemy);
                             if (runAway)
                                 break;
-                            if (enemy.isDead()) {
-                                mainPlayer.win(enemy.getExperienceReward());
+                            if (enemy[0].isDead()) {
+                                mainPlayer.win(enemy[0].getExperienceReward());
                                 mainPlayer.levelUp();
                                 break;
                             }
-                            enemy.attack(mainPlayer);
+                            enemy[0].attack(mainPlayer);
                             if (mainPlayer.isDead()) {
                                 mainPlayer.gameOver();
                                 done = true;
