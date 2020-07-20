@@ -41,16 +41,17 @@ public class Map {
         int roll = Utility.random(0, 20);
         int rollMultipleEnemy = Utility.random(0, 10);
         int enemyReplicationNumber = Utility.random(1, 3);
-        System.out.println("This is the replication number " + enemyReplicationNumber);
+//        System.out.println("This is the replication number " + enemyReplicationNumber);
       
-        Enemy[] enemies;
-        if(rollMultipleEnemy < 3) {
-        	enemies = new Enemy[(enemyReplicationNumber + 1)];
-        } else {
-        	enemies = new Enemy[1];
-        }
+        Enemy[] enemies = null;
+
         
-        if (roll <= 20) {
+        if (roll <= 5) {
+            if(rollMultipleEnemy < 3) {
+            	enemies = new Enemy[(enemyReplicationNumber + 1)];
+            } else {
+            	enemies = new Enemy[1];
+            }
             Weapon weapon = new Weapon("dagger", 5, 10);
             Shield shield = new Shield("Wooden", 10);
             Enemy enemy = new Enemy("Zombie", 10, 8, 200, weapon, shield);
