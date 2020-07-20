@@ -46,7 +46,7 @@ public class Map {
         Enemy[] enemies = null;
 
         
-        if (roll <= 5) {
+        if (roll <= 10) {
             if(rollMultipleEnemy < 3) {
             	enemies = new Enemy[(enemyReplicationNumber + 1)];
             } else {
