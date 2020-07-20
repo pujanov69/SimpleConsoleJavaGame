@@ -1,33 +1,19 @@
 import java.util.Scanner;
 
-public class Player {
-    private String name;
-    private int health;
-    private int accuracy;
+public class Player extends Character {
     private int experiencePoints;
-    private Weapon weapon;
     private int level;
     private int maxHealth;
     private int nextLevelExperience;
 
-    public Player(String name, int health, int accuracy, int experiencePoints, Weapon weapon, int level, int maxHealth, int nextLevelExperience) {
-        this.name = name;
-        this.health = health;
-        this.accuracy = accuracy;
+    public Player(int experiencePoints, int level, int maxHealth, int nextLevelExperience, String name, int health, int accuracy, Weapon weapon) {
+    	super(name, health, accuracy, weapon);
         this.experiencePoints = experiencePoints;
-        this.weapon = weapon;
         this.level = level;
         this.maxHealth = maxHealth;
         this.nextLevelExperience = nextLevelExperience;
     }
 
-    public boolean isDead() {
-        return health <= 0;
-    }
-
-    public void takeDamage(int damage) {
-        health -= damage;
-    }
 
     public boolean attack(Enemy enemy) {
         Scanner scanner = new Scanner(System.in);
@@ -108,8 +94,5 @@ public class Player {
         System.out.println("Weapon Damage              = " + weapon.getDamageRange().getLow() + " - " + weapon.getDamageRange().getHigh());
     }
 
-    public void displayHealth() {
-        System.out.println(name + "'s health = " + health);
-    }
 
 }

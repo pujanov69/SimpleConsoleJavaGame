@@ -39,7 +39,7 @@ public class Map {
 
     public Enemy checkForEnemies() {
         int roll = Utility.random(0, 20);
-        Enemy enemy = null;
+        Character enemy = null;
 
         if (roll <= 10) {
             Weapon weapon = new Weapon("dagger", 5, 10);

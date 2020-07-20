@@ -1,29 +1,16 @@
-public class Enemy {
-    private String name;
-    private int health;
-    private int accuracy;
+public class Enemy extends Character {
     private int experienceReward;
-    private Weapon weapon;
 
-    public Enemy(String name, int health, int accuracy, int experienceReward, Weapon weapon) {
-        this.name = name;
-        this.health = health;
-        this.accuracy = accuracy;
+    public Enemy(int experienceReward, String name, int health, int accuracy, Weapon weapon) {
+    	super(name, health, accuracy, weapon);
         this.experienceReward = experienceReward;
-        this.weapon = weapon;
     }
 
-    public String getName() {
-        return name;
-    }
 
     public int getExperienceReward() {
         return experienceReward;
     }
 
-    public boolean isDead() {
-        return health <= 0;
-    }
 
     public void attack(Player player) {
         System.out.println("A " + this.name + " attacks you with a " + this.weapon.getName());
@@ -35,14 +22,6 @@ public class Enemy {
             System.out.println("The " + name + " missed!");
         }
         System.out.println();
-    }
-
-    public void takeDamage(int damage) {
-        health -= damage;
-    }
-
-    public void displayHealth() {
-        System.out.println(name + "'s health = " + health);
     }
 
 }
