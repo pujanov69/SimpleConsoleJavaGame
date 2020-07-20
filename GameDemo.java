@@ -28,7 +28,7 @@ public class GameDemo {
                             int count = enemy.length;
                             System.out.println("Total number of enemies encountered: " + count);
                             for(int i = 0; i < count; i++) {
-                            	System.out.println("Zombie number : 1" + (i+1));
+                            	System.out.println("Enemy number : 1" + (i+1));
                             	enemy[i].displayHealth();
                             	((Enemy) enemy[i]).displayShield();
                             }
