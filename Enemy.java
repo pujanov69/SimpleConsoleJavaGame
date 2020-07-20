@@ -16,7 +16,7 @@ public class Enemy extends Character {
     }
 
 
-    public void attack(Player player) {
+    public void attack(Character player) {
         System.out.println("A " + this.name + " attacks you with a " + this.weapon.getName());
         if (Utility.random(0, 20) < accuracy) {
             int damage = Utility.random(weapon.getDamageRange());
@@ -41,5 +41,11 @@ public class Enemy extends Character {
 			health -= damage;
 		}
 	}
+	
+    public void displayShield() {
+    	if(shieldResistance > 0) {
+    		System.out.println(name + "'s shield resistance = " + shieldResistance);
+    	} 
+    }
 
 }

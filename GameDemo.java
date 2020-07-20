@@ -26,6 +26,7 @@ public class GameDemo {
 
                             mainPlayer.displayHealth();
                             enemy.displayHealth();
+                            enemy.displayShield();
                             boolean runAway = mainPlayer.attack(enemy);
                             if (runAway)
                                 break;

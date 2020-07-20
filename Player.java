@@ -17,7 +17,7 @@ public class Player extends Character {
     }
 
 
-    public boolean attack(Enemy enemy) {
+    public boolean attack(Character enemy) {
         Scanner scanner = new Scanner(System.in);
         int selection;
         System.out.println("1) Attack, 2) Run: ");
