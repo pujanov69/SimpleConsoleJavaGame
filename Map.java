@@ -44,7 +44,7 @@ public class Map {
         System.out.println("This is the replication number " + enemyReplicationNumber);
       
         Enemy[] enemies;
-        if(rollMultipleEnemy < 8) {
+        if(rollMultipleEnemy < 3) {
         	enemies = new Enemy[(enemyReplicationNumber + 1)];
         } else {
         	enemies = new Enemy[1];
@@ -56,7 +56,7 @@ public class Map {
             Enemy enemy = new Enemy("Zombie", 10, 8, 200, weapon, shield);
             enemies[0] = enemy;
             System.out.println("This is the size of array " + enemies.length);
-            if(rollMultipleEnemy < 8) {
+            if(rollMultipleEnemy < 3) {
             	for(int i = 1; i <= enemyReplicationNumber; i++) {
             		System.out.println("This is the index " + i);
             		enemies[i] = new Enemy("Zombie", 10, 8, 200, weapon, shield);

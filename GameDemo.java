@@ -4,7 +4,7 @@ public class GameDemo {
     public static void main(String[] args) {
         Map gameMap = new Map();
         Player mainPlayer = new Player("Bob", 1000, 10,
-                0, new Weapon("Sword", 1, 4), 1, 20, 1000);
+                0, new Bomb("Bomb", 1, 4, 4), 1, 20, 1000);
 
         Scanner input = new Scanner(System.in);
         boolean done = false;
@@ -28,6 +28,7 @@ public class GameDemo {
                             int count = enemy.length;
                             System.out.println("enemy number" + count);
                             for(int i = 0; i < count; i++) {
+                            	System.out.println("Zombie number :" + (i+1));
                             	enemy[i].displayHealth();
                             	((Enemy) enemy[i]).displayShield();
                             }

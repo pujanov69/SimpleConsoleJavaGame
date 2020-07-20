@@ -116,10 +116,21 @@ public class Player extends Character {
         switch (selection) {
             case 1:
                 System.out.println("You attack an " + enemies[0].getName() + " with a " + weapon.getName());
-                if (Utility.random(0, 20) < accuracy) {
-                    int damage = Utility.random(weapon.getDamageRange());
-                    System.out.println("You attack for " + damage + " damage!");
-                    enemies[0].takeDamage(damage);
+                if(weapon.getName().equalsIgnoreCase("Bomb")) {
+                	int numberOfEnemies = enemies.length;
+                	for(int i = 0; i < numberOfEnemies; i++) {
+                		int damage = Utility.random(weapon.getDamageRange());
+                        System.out.println("You attack for " + damage + " damage!");
+                        enemies[i].takeDamage(damage);
+                	} 
+                } 
+                
+                else if(weapon.getName().equalsIgnoreCase("Sword")) {
+	                if (Utility.random(0, 20) < accuracy) {
+	                    int damage = Utility.random(weapon.getDamageRange());
+	                    System.out.println("You attack for " + damage + " damage!");
+	                    enemies[0].takeDamage(damage);
+	                } 
                 } else {
                     System.out.println("You miss!");
                 }

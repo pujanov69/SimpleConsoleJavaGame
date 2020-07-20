@@ -8,8 +8,15 @@ public class Bomb extends Weapon {
 	
 	public Bomb(String name, int low, int high, int numberOfEnemies) {
 		super(name, low, high);
+		this.setNumberOfEnemies(numberOfEnemies);
+	}
+
+	public int getNumberOfEnemies() {
+		return numberOfEnemies;
+	}
+
+	public void setNumberOfEnemies(int numberOfEnemies) {
 		this.numberOfEnemies = numberOfEnemies;
-		// TODO Auto-generated constructor stub
 	}
 
 
