@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Enemy.class
 /GameDemo.class
 /Map.class
@@ -12,3 +13,8 @@
 /GridMap.class
 /ConfigurationFormatException.class
 /InvalidConfigurationException.class
+=======
+.idea
+.project
+/*.class
+>>>>>>> 7a79cf05633f354debf5fc20ffff03fb6b3bc68e
