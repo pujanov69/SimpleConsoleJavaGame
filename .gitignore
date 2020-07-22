@@ -10,3 +10,5 @@
 /Shield.class
 /Bomb.class
 /GridMap.class
+/ConfigurationFormatException.class
+/InvalidConfigurationException.class
