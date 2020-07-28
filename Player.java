@@ -149,6 +149,24 @@ public class Player extends Character {
         }
         return false;
 	}
+	
+	void buyFrom(WeaponTrader trader, int itemNumber) {
+		Inventory inventory = trader.getInventory();		
+		
+		if(gold > inventory.getItemPrice(itemNumber)) {
+			gold -= inventory.getItemPrice(itemNumber);
+			setWeapon(inventory.getInventoryItems().get(itemNumber).getWeapon());
+			inventory.removeItem(itemNumber);
+			System.out.println(inventory.getInventoryItems().get(itemNumber).getWeapon().getName() + " bought");
+		}
+	}
+	
+	void sellTo(WeaponTrader trader) {
+		Inventory inventory = trader.getInventory();
+		
+		inventory.addItem(this.weapon, 10);
+		setWeapon(null);
+	}
 
 
 }

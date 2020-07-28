@@ -1,8 +1,19 @@
 import java.util.Scanner;
 
 public class GameDemo {
+	
+	
     public static void main(String[] args) {
-        Map gameMap = new Map();
+    	
+    	
+    	int[] obstacleMap = {  0, 2, 0, 0,
+                0, 1, 0, 0,
+                0, 0, 1, 0,   // number of rows and columns are equal to 4
+                0, 1, 0, 2 };
+    	
+    	
+        //Map gameMap = new Map();
+    	GridMap gameMap = new GridMap(4,4, obstacleMap );
         Player mainPlayer = new Player("Bob", 1000, 10,
                 0, new Bomb("Bomb", 1, 4, 4), 1, 20, 1000);
 

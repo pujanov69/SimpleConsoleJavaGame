@@ -2,35 +2,23 @@ import java.util.Scanner;
 
 public class Map {
 
-    private int playerXPos;
-    private int playerYPos;
+    protected int playerXPos;
+    protected int playerYPos;
 
     public Map() {
         playerXPos = 0;
         playerYPos = 0;
     }
 
-    public void move() {
-        Scanner scanner = new Scanner(System.in);
-        int selection = 1;
-        System.out.println("1) North, 2) East, 3) South, 4) West: ");
-        selection = scanner.nextInt();
-
-        switch (selection) {
-            case 1: // North
-                playerYPos++;
-                break;
-            case 2: // East
-                playerXPos++;
-                break;
-            case 3: // South
-                playerYPos--;
-                break;
-            default: // West
-                playerXPos--;
-                break;
-        }
-    }
+	/*
+	 * public void move() { Scanner scanner = new Scanner(System.in); int selection
+	 * = 1; System.out.println("1) North, 2) East, 3) South, 4) West: "); selection
+	 * = scanner.nextInt();
+	 * 
+	 * switch (selection) { case 1: // North playerYPos++; break; case 2: // East
+	 * playerXPos++; break; case 3: // South playerYPos--; break; default: // West
+	 * playerXPos--; break; } }
+	 */
 
     public void printPlayerPos() {
         System.out.println("Player Position = (" + playerYPos + ", "
