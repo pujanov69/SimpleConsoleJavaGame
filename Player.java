@@ -158,6 +158,10 @@ public class Player extends Character {
 			setWeapon(inventory.getInventoryItems().get(itemNumber).getWeapon());
 			inventory.removeItem(itemNumber);
 			System.out.println(inventory.getInventoryItems().get(itemNumber).getWeapon().getName() + " bought");
+			
+			System.out.println("Coin: " + gold);
+		}else {
+			System.out.println("Not enough gold to buy Item!");
 		}
 	}
 	
@@ -165,7 +169,8 @@ public class Player extends Character {
 		Inventory inventory = trader.getInventory();
 		
 		inventory.addItem(this.weapon, 10);
-		setWeapon(null);
+		System.out.println("Weapon Sold! Player is now bare hand!");
+		setWeapon(new Weapon("None", 0, 0));
 	}
 
 

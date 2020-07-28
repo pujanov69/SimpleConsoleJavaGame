@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameDemo {
@@ -28,6 +29,80 @@ public class GameDemo {
             switch (selection) {
                 case 1:
                     gameMap.move();
+                    
+                    
+               
+                    
+                    //Code to 
+                    
+                    if(GridMap.shopEncountered == true ) {
+                    	
+                    
+                    	
+                   	  input = new Scanner(System.in);	
+                		
+                    	
+                		
+                   	  WeaponTrader trader = new WeaponTrader();
+                    	
+                		
+                   	while(selection != 4) {
+                   	  System.out.println("Welcome to Weapon Shop");
+                		System.out.println("----------------------------");
+                		System.out.println("1) Buy a weapon, 2) Sell your weapon, 3) List all items 4) Exit.");
+                		//int selection = 1;
+                		selection = input.nextInt();
+                		
+                		
+                    	
+                		switch (selection) {
+                        case 1:
+                        	ArrayList<String> strings1 = trader.getInventory().listAllItems();
+                        	System.out.println(strings1);
+                        	
+                        	System.out.println("Select the item number to buy: ");
+                        	
+                        	Scanner input1 = new Scanner(System.in);
+                        	
+                        	selection = input1.nextInt();
+                        	
+                        	//trader.sell(selection);
+                        	
+                        	mainPlayer.buyFrom(trader, selection);
+                        	
+                        	
+                        	
+                        	
+                        	
+                        	
+                            break;
+                        case 2:
+                        	
+                        	mainPlayer.sellTo(trader);
+                        	
+                            break;
+                        case 3:
+                        	ArrayList<String> strings = trader.getInventory().listAllItems();
+                        	System.out.println(strings);
+                        	
+                        	
+                        	
+                            break;
+                        case 4:
+                            break;
+                    }
+                		}
+                   	
+                   	
+                   }
+                   
+                   GridMap.shopEncountered = false;
+                   
+                  
+               	
+                    
+                    
+                    //Code to ends
 
                     enemy = (Enemy[]) gameMap.checkForEnemies();
 
@@ -71,5 +146,12 @@ public class GameDemo {
                     break;
             }
         }
+    }
+    
+    public static void checkForShops() {
+    	
+    	
+    	  
+     
     }
 }

@@ -13,6 +13,7 @@ public class GridMap extends Map {
 
 
 
+    public static boolean shopEncountered = false;
 
 
     public GridMap(int gridRows, int gridColumns, int[] obstacleMap) {
@@ -50,7 +51,8 @@ public class GridMap extends Map {
             	 }else if(obstacleMap[nextXPos * gridRows + playerYPos] == 2) {
             		 System.out.println("You encounterd a shop \n -------------------------------\n buy item");
             		 playerXPos--;
-            		 checkForShops();
+            		 //checkForShops();
+            		 shopEncountered = true;
             		 
             		 
             	 }
@@ -75,7 +77,8 @@ public class GridMap extends Map {
             	 }else if(obstacleMap[playerXPos * gridRows + nextYPos] == 2) {
             		 System.out.println("You encounterd a shop \n -------------------------------\n buy item");
             		 playerYPos++;
-            		 checkForShops();
+            		// checkForShops();
+            		 shopEncountered = true;
             	 }else {
                  playerYPos++;
                  System.out.println("Player position updated east");
@@ -97,7 +100,8 @@ public class GridMap extends Map {
             	 }else if(obstacleMap[nextXPos * gridRows + playerYPos] == 2) {
             		 System.out.println("You encounterd a shop \n -------------------------------\n buy item");
             		 playerXPos++;
-            		 checkForShops();
+            		// checkForShops();
+            		 shopEncountered = true;
             	 }else {
                  playerXPos++;
                  System.out.println("Player position updated south");
@@ -119,7 +123,8 @@ public class GridMap extends Map {
             	 }else if(obstacleMap[playerXPos * gridRows + nextYPos] == 2) {
             		 System.out.println("You encounterd a shop \n -------------------------------\n buy item");
             		 playerYPos--;
-            		 checkForShops();
+            		// checkForShops();
+            		 shopEncountered = true;
             	 }else {
                  playerYPos--;
                  System.out.println("Player position updated west");
@@ -132,54 +137,13 @@ public class GridMap extends Map {
     }
     
     
-    public WeaponTrader checkForShops() {
-    	
-    		Scanner input = new Scanner(System.in);	
-    		
-    	
-    		WeaponTrader trader = new WeaponTrader();
-        	
-    		
-    		System.out.println("Welcome to Weapon Shop");
-    		System.out.println("----------------------------");
-    		System.out.println("1) Buy a weapon, 2) Sell your weapon, 3) List all items 4) Exit.");
-    		int selection = 1;
-    		selection = input.nextInt();
-        	
-    		switch (selection) {
-            case 1:
-            	ArrayList<String> strings1 = trader.getInventory().listAllItems();
-            	System.out.println(strings1);
-            	
-            	System.out.println("Select the item number to buy: ");
-            	
-            	Scanner input1 = new Scanner(System.in);
-            	
-            	selection = input1.nextInt();
-            	
-            	trader.sell(selection);
-            	
-            	
-                break;
-            case 2:
-                break;
-            case 3:
-            	ArrayList<String> strings = trader.getInventory().listAllItems();
-            	System.out.println(strings);
-            	
-            	checkForShops();
-            	
-            	
-                break;
-            case 4:
-                break;
-        }
-    		
-    		
-        	return trader;
-
-    	
-    }
+	/*
+	 * public WeaponTrader checkForShops() {
+	 * 
+	 * 
+	 * 
+	 * }
+	 */
 
 
 

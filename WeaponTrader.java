@@ -23,7 +23,9 @@ public class WeaponTrader implements Trader{
 	@Override
 	public Weapon sell(int itemNumber) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		
+		return inventory.removeItem(itemNumber);
 	}
 
 	@Override
